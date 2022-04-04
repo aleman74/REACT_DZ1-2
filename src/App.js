@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+// import './css/main.css';
+
+import ProductInfo from './models/ProductInfo';
+import ShopItemClass from "./components/ShopItemClass";
+
+
 
 function App() {
+
+  const productInfo = new ProductInfo(
+    'Tiger of Sweden',
+    'Leonard coat',
+    'Minimalistic coat in cotton-blend',
+    'Men\'s minimalistic overcoat in cotton-blend. Features a stand-up collar, concealed front closure and single back vent. Slim fit with clean, straight shape. Above-knee length.',
+    399,
+    '£'
+    )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="container">
+        <div className="background-element">
+        </div>
+        <div className="highlight-window">
+          <div className='highlight-overlay'></div>
+        </div>
+        <div className="window">
+          <ShopItemClass item={productInfo} />
+        </div>
+      </div>
+  )
 }
 
 export default App;
